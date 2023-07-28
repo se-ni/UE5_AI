@@ -256,6 +256,10 @@ void AAIPlayerCharacter::AnimNotifyBegin(FName NotifyName, const FBranchingPoint
 			ProjectTile->SetActorLocation(Pos);
 			ProjectTile->SetActorRotation(GetActorRotation());
 			ProjectTile->GetSphereComponent()->SetCollisionProfileName(TEXT("PlayerAttack"), true);
+			AActor* MyProjectTile = ProjectTile; // 태그를 추가할 액터 포인터
+
+			// 원하는 태그를 문자열로 지정하여 태그 배열에 추가
+			MyProjectTile->Tags.AddUnique(TEXT("PlayerAttack"));
 		}
 	}
 }

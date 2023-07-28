@@ -72,3 +72,5 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+/AE_UNREAL/Intermediate
+/AE_UNREAL/Saved/Logs

@@ -74,3 +74,5 @@ Plugins/*/Intermediate/*
 DerivedDataCache/*
 /AE_UNREAL/Intermediate
 /AE_UNREAL/Saved/Logs
+/AE_UNREAL/Binaries/Win64
+/AE_UNREAL/Saved

@@ -101,9 +101,11 @@ void UBTTask_MOVE::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory
 		}
 
 		FVector ReturnDir = PawnPos - OriginAIPos;
+		
 
 		if ( ReturnDir.Size() > ReturnRange) // 원래자리에서 SearchRange * 1.5f 만큼 더 떨어지면
 		{
+			UE_LOG(LogTemp, Log, TEXT("%S(%u) ReturnDir: %f > ReturnRange"), __FUNCTION__, __LINE__, ReturnDir.Size());
 			SetStateChange(OwnerComp, AIState::RETURN); // 리턴
 			return;
 		}

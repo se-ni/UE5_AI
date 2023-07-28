@@ -53,6 +53,6 @@ private:
 	UFUNCTION()
 	void AnimNotifyBegin(FName NotifyName, const FBranchingPointNotifyPayload& BranchingPointPayload);
 
-	float Speed = 3000.0f;
+	float Speed = 1500.0f;
 
 };

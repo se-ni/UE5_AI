@@ -5,6 +5,7 @@
 #include <Global/GlobalGameInstance.h>
 #include <Global/Data/MonsterData.h>
 #include "Components/CapsuleComponent.h"
+#include "AI/BTTask_DEATH.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 
@@ -43,6 +44,24 @@ void AMonster::BeginOverLap(
 {
 	if (OtherActor->ActorHasTag(TEXT("PlayerAttack")))
 	{
-		this->Destroy();
+		UE_LOG(LogTemp, Log, TEXT("%S(%u) Overlapped"), __FUNCTION__, __LINE__);
+		isoverlap = true;
+	//	UBTTask_DEATH* TaskDeath = NewObject<UBTTask_DEATH>();
+	//	// 인스턴스를 사용하여 GetDeath 함수 호출
+	//	bool bIsDeath = TaskDeath->GetDeath();
+	//	if (bIsDeath == true)
+	//	{
+	//		
+	//	}	
+	}
+}
+
+void AMonster::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (isoverlap)
+	{
+		GetBlackboardComponent()->SetValueAsEnum(TEXT("AIState"), static_cast<uint8>(AIState::DEATH));
 	}
 }

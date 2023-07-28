@@ -17,7 +17,15 @@ class AE_UNREAL_API UBTTask_DEATH : public UBTTask_AIBase
 
 	UBTTask_DEATH();
 
+	bool isDeath = false;
+
+public:
+	bool GetDeath()
+	{
+		return isDeath;
+	}
+
 protected:
-	
+	void TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DelataSeconds) override;
 	EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 };

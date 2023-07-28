@@ -33,4 +33,6 @@ private:
 		);
 	UPROPERTY(Category = "Animation", EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	FName DataName = "NONE";
+	void Tick(float DeltaTime) override;
+	bool isoverlap = false;
 };

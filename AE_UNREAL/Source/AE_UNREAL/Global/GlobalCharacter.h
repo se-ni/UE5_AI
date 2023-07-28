@@ -15,7 +15,7 @@ class AE_UNREAL_API AGlobalCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	AGlobalCharacter();
-
+	virtual void Tick(float DeltaTime) override;
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
@@ -103,7 +103,7 @@ protected:
 
 private:	
 	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+
 
 
 	UPROPERTY(Category = "GameModeValue", EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))

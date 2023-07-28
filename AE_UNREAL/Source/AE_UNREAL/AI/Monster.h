@@ -20,6 +20,16 @@ class AE_UNREAL_API AMonster : public AAICharacter
 
 	void BeginPlay() override;
 
+	bool isoverlap = false;
+public:
+	void setoverlap(bool _bool)
+	{
+		isoverlap = _bool;
+	}
+	AMonster* getmonster()
+	{
+		return this;
+	}
 
 private:
 	UFUNCTION()
@@ -34,5 +44,5 @@ private:
 	UPROPERTY(Category = "Animation", EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	FName DataName = "NONE";
 	void Tick(float DeltaTime) override;
-	bool isoverlap = false;
+
 };
